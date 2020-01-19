@@ -6,14 +6,14 @@ Write a program that prints the numbers from 1 to 100. But:
 """
 
 
-def fizz_buzz(number):
-    for x in range(number):
+def fizz_buzz():
+    for x in range(1, 101):
         if x % 3 == 0:
-            print("Fizz", x)
+            print("Fizz")
         if x % 5 == 0:
-            print("Buzz", x)
+            print("Buzz")
         else:
             print("FizzBuzz")
 
 
-fizz_buzz(101)
+fizz_buzz()
