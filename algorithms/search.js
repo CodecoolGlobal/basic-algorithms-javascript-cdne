@@ -13,7 +13,12 @@
  * @returns {number|null} Index of the element or null
  */
 function linear_search(number, list) {
-
+    for (let index = 0; index < list.length; index++) {
+        if (list[index] == number) {
+            console.log("Compared: " + (index + 1) + " times")
+            return index
+        }
+    }
 
     return null;
 }
@@ -29,8 +34,25 @@ function linear_search(number, list) {
  * @returns {number|null} Index of the element or null
  */
 function binary_search(number, list) {
-
-
+    let compared = 0;
+    let low_bound = 0;
+    let high_bound = list.length - 1;
+    let middle_bound;
+    while(low_bound <= high_bound){
+        middle_bound = Math.floor((low_bound + high_bound) / 2);
+        console.log(middle_bound)
+        compared++;
+        if(list[middle_bound] === number){
+            console.log("Compared: " + compared + " times");
+            return middle_bound
+        }
+        else if(list[middle_bound] > number){
+            high_bound = middle_bound - 1;
+        }
+        else{
+            low_bound = middle_bound + 1;
+        }
+    }
     return null;
 }
 
